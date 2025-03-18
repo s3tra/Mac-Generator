@@ -1,4 +1,4 @@
-a.out
-*.pkg.tar.zst
+# production
 /pkg
 /src
+*.pkg.tar.zst

@@ -1,10 +1,10 @@
 # Maintainer: s3tra
 
 pkgname=mac-generator
-pkgver=0.0.4
-pkgrel=4
+pkgver=0.0.5
+pkgrel=5
 arch=('x86_64')
-pkgdesc="Randomly generate a new MAC Address after every restart."
+pkgdesc="Randomly generate a new MAC Address."
 url="https://github.com/s3tra/Mac-Generator"
 license=('MIT')
 depends=('gcc' 'make')
@@ -17,5 +17,5 @@ build() {
 }
 
 package() {
-    install -Dm755 mac-generator "$pkgdir/usr/bin/mac-generator"
+    install -Dm755 "$srcdir/mac-generator" "$pkgdir/usr/bin/mac-generator"
 }

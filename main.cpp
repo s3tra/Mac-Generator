@@ -22,11 +22,9 @@ string generateMacAddress()
 bool setMacAddress(string interface, string macAddress)
 {
     string command = "sudo ip link set dev " + interface + " address " + macAddress;
-
     int result = system(command.c_str());
-    
-    if (result == 0) return true;
-    return false;
+
+    return (result == 0);
 }
 
 int main()
@@ -34,9 +32,7 @@ int main()
     srand(time(NULL));
     
     string macAddress = generateMacAddress();
-    std::cout << macAddress << std::endl;
-
-    std::cout << setMacAddress("eno1", macAddress) << std::endl;
-
+    setMacAddress("eno1", macAddress);
+    
     return 0;
 }
