@@ -1,8 +1,8 @@
 # Maintainer: s3tra
 
 pkgname=mac-generator
-pkgver=0.0.5
-pkgrel=5
+pkgver=0.0.6
+pkgrel=6
 arch=('x86_64')
 pkgdesc="Randomly generate a new MAC Address."
 url="https://github.com/s3tra/Mac-Generator"
