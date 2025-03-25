@@ -1,4 +1,5 @@
 # Mac-Generator
+[![CodeFactor](https://www.codefactor.io/repository/github/s3tra/mac-generator/badge)](https://www.codefactor.io/repository/github/s3tra/mac-generator)
 
 A simple C++ utility for generating and setting a valid MAC address on Linux systems. The first two characters of the generated MAC address are ensured to be even for validity. This tool is tested on **Arch Linux**.
 
