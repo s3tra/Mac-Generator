@@ -1,4 +1,6 @@
 # production
 /pkg
 /src
+
+# development
 *.pkg.tar.zst

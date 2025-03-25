@@ -1,24 +1,18 @@
 #include <iostream>
-#include <vector>
 #include <ctime>
 #include <cmath>
 #include <cstdlib>
 
-using std::string, std::vector;
+using std::string;
 
 string generateMacAddress()
 {
-    vector<char> chars = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-    vector<string> pairs = {"02", "04", "06", "08", "0A", "0C", "0E", "10"};
-    string macAddress = "";
-
-    string firstPair = pairs[rand() % pairs.size()];
-    macAddress += firstPair[0];
-    macAddress += firstPair[1];
-    macAddress += ':';
+    char chars[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    string pairs[8] = {"02", "04", "06", "08", "0A", "0C", "0E", "10"};
+    string macAddress = pairs[rand() % 8] += ':';
 
     for (int i = 0; i < 10; i++) {
-        macAddress += chars[rand() % chars.size()];
+        macAddress += chars[rand() % 16];
         if (i % 2 == 1 && i != 9) macAddress += ':';
     }
 
@@ -38,8 +32,8 @@ int main()
     srand(time(NULL));
     
     string macAddress = generateMacAddress();
-    setMacAddress("eno1", macAddress);
-    std::cout << macAddress;
+    string interface = "eno1";
+    setMacAddress(interface, macAddress);
     
     return 0;
 }
